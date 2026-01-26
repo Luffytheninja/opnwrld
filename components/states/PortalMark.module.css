@@ -1,9 +1,0 @@
-.mark {
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    font-weight: var(--font-weight-medium);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-primary);
-    margin: 0;
-    line-height: 1;
-}
