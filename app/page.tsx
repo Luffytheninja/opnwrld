@@ -32,9 +32,9 @@ export default function FeedPage() {
         </section>
 
         {/* Community Signal */}
-        <section className="bg-systemGray6 dark:bg-systemGray5/10 rounded-ios-2xl p-6 space-y-4">
+        <section className="bg-system-gray-6 dark:bg-system-gray-5/10 rounded-ios-2xl p-6 space-y-4">
           <h3 className="text-ios-headline">COMMUNITY FREQUENCY</h3>
-          <p className="text-ios-subheadline text-secondaryLabel">
+          <p className="text-ios-subheadline text-secondary-label">
             Join 2,400+ builders in the OPN frequency. Access exclusive transmissions and early access keys.
           </p>
           <Button variant="secondary" onClick={() => window.location.href = '/community'}>Join the Frequency</Button>
@@ -42,11 +42,11 @@ export default function FeedPage() {
 
         {/* Brand Mantra */}
         <section className="py-12 text-center space-y-4">
-          <div className="w-12 h-1 bg-systemGray4 mx-auto rounded-full" />
+          <div className="w-12 h-1 bg-system-gray-4 mx-auto rounded-full" />
           <p className="text-ios-title3 font-medium px-8 italic">
             "Your reality is waiting to be built. We just provide the gear."
           </p>
-          <p className="text-ios-footnote text-systemGray uppercase tracking-widest">Opn Wrld Studio — 2026</p>
+          <p className="text-ios-footnote text-system-gray uppercase tracking-widest">Opn Wrld Studio — 2026</p>
         </section>
       </div>
     </div>

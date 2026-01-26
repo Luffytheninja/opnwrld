@@ -45,7 +45,7 @@ const TabBar = () => {
                         <Link
                             key={tab.name}
                             href={tab.path}
-                            className={`flex flex-col items-center justify-center w-full h-full transition-colors ${isActive ? 'text-systemBlue' : 'text-systemGray'
+                            className={`flex flex-col items-center justify-center w-full h-full transition-colors ${isActive ? 'text-system-blue' : 'text-system-gray'
                                 }`}
                         >
                             <div className="mb-0.5">

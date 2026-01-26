@@ -17,9 +17,9 @@ const Button: React.FC<ButtonProps> = ({
     const baseStyles = "inline-flex items-center justify-center font-semibold transition-all active:opacity-70 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
-        primary: "bg-systemBlue text-white rounded-ios-lg",
-        secondary: "bg-systemGray5 dark:bg-systemGray6 text-systemBlue rounded-ios-lg",
-        plain: "text-systemBlue p-0",
+        primary: "bg-system-blue text-white rounded-ios-lg",
+        secondary: "bg-system-gray-5 dark:bg-system-gray-6 text-system-blue rounded-ios-lg",
+        plain: "text-system-blue p-0",
     };
 
     const sizes = {

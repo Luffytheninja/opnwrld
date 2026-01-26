@@ -1,6 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* iOS 26 System Colors */
+  --color-system-blue: #007AFF;
+  --color-system-gray: #8E8E93;
+  --color-system-gray-2: #AEAEB2;
+  --color-system-gray-3: #C7C7CC;
+  --color-system-gray-4: #D1D1D6;
+  --color-system-gray-5: #E5E5EA;
+  --color-system-gray-6: #F2F2F7;
+  --color-label: #000000;
+  --color-secondary-label: rgba(60, 60, 67, 0.6);
+  --color-tertiary-label: rgba(60, 60, 67, 0.3);
+  --color-background: #FFFFFF;
+  --color-secondary-background: #F2F2F7;
+  --color-tertiary-background: #FFFFFF;
+  --color-separator: rgba(60, 60, 67, 0.29);
+
+  /* iOS Spacing Scale (8pt grid converted to rem for v4 consistency) */
+  --spacing-ios-1: 4px;
+  --spacing-ios-2: 8px;
+  --spacing-ios-3: 12px;
+  --spacing-ios-4: 16px;
+  --spacing-ios-5: 20px;
+  --spacing-ios-6: 24px;
+  --spacing-ios-8: 32px;
+  --spacing-ios-10: 40px;
+  --spacing-ios-12: 48px;
+
+  /* iOS Border Radius */
+  --radius-ios-sm: 8px;
+  --radius-ios-md: 10px;
+  --radius-ios-lg: 12px;
+  --radius-ios-xl: 16px;
+  --radius-ios-2xl: 20px;
+
+  /* Backdrop Blur */
+  --blur-ios: 20px;
+}
 
 @layer base {
   :root {
@@ -12,6 +49,14 @@
     :root {
       --background: 0 0 0;
       --foreground: 255 255 255;
+
+      /* Dark Mode Color Overrides */
+      --color-label: #FFFFFF;
+      --color-secondary-label: rgba(235, 235, 245, 0.6);
+      --color-tertiary-label: rgba(235, 235, 245, 0.3);
+      --color-background: #000000;
+      --color-secondary-background: #1C1C1E;
+      --color-separator: rgba(84, 84, 88, 0.65);
     }
   }
 
@@ -25,30 +70,23 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    /* Native App Feel */
     user-select: none;
     cursor: default;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
   }
 
-  /* Smooth scroll for desktop, native feel for ios */
   html {
     scroll-behavior: smooth;
     height: 100%;
     -webkit-text-size-adjust: 100%;
   }
 
-  /* iOS safe area support */
   .safe-top {
     padding-top: env(safe-area-inset-top);
   }
+
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
-  }
-  .safe-left {
-    padding-left: env(safe-area-inset-left);
-  }
-  .safe-right {
-    padding-right: env(safe-area-inset-right);
   }
 }
 
@@ -57,7 +95,82 @@
   @apply backdrop-blur-ios bg-white/70 dark:bg-black/70;
 }
 
-/* Hide scrollbars for a cleaner app feel */
+/* iOS Typography Utilities */
+.text-ios-largeTitle {
+  font-size: 34px;
+  line-height: 41px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-title1 {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-title2 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-title3 {
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-headline {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-body {
+  font-size: 17px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-callout {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+}
+
+.text-ios-subheadline {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+.text-ios-footnote {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+}
+
+.text-ios-caption1 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+.text-ios-caption2 {
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 400;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

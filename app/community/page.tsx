@@ -16,19 +16,19 @@ export default function CommunityPage() {
             <NavBar title="Community" largeTitle={true} />
 
             <div className="flex-1 px-4 py-6 pb-32 space-y-6">
-                <div className="bg-systemBlue text-white p-6 rounded-ios-2xl space-y-2">
+                <div className="bg-system-blue text-white p-6 rounded-ios-2xl space-y-2">
                     <h2 className="text-ios-title2 font-bold">THE SIGNAL IS ACTIVE</h2>
                     <p className="text-ios-subheadline opacity-90">Builders are connecting across the globe. Find your node.</p>
                 </div>
 
                 <div className="space-y-1">
-                    <h3 className="px-1 text-ios-caption1 text-systemGray font-semibold uppercase tracking-wider">Active Channels</h3>
-                    <div className="bg-systemGray6 dark:bg-systemGray5/10 rounded-ios-2xl divide-y divide-separator overflow-hidden">
+                    <h3 className="px-1 text-ios-caption1 text-system-gray font-semibold uppercase tracking-wider">Active Channels</h3>
+                    <div className="bg-system-gray-6 dark:bg-system-gray-5/10 rounded-ios-2xl divide-y divide-separator overflow-hidden">
                         {COMMUNITY_LINKS.map(link => (
-                            <div key={link.title} className="p-4 flex items-center justify-between active:bg-systemGray5 dark:active:bg-systemGray5/20 transition-colors">
+                            <div key={link.title} className="p-4 flex items-center justify-between active:bg-system-gray-5 dark:active:bg-system-gray-5/20 transition-colors">
                                 <div className="space-y-0.5">
                                     <h4 className="text-ios-callout font-semibold">{link.title}</h4>
-                                    <p className="text-ios-footnote text-systemGray">{link.description}</p>
+                                    <p className="text-ios-footnote text-system-gray">{link.description}</p>
                                 </div>
                                 <Button variant="secondary" size="sm">{link.label}</Button>
                             </div>
@@ -36,19 +36,19 @@ export default function CommunityPage() {
                     </div>
                 </div>
 
-                <div className="p-6 bg-systemGray6 dark:bg-systemGray5/10 rounded-ios-2xl text-center space-y-4">
-                    <div className="w-16 h-16 bg-systemGray5 dark:bg-systemGray4/20 rounded-full mx-auto flex items-center justify-center">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-systemGray">
+                <div className="p-6 bg-system-gray-6 dark:bg-system-gray-5/10 rounded-ios-2xl text-center space-y-4">
+                    <div className="w-16 h-16 bg-system-gray-5 dark:bg-system-gray-4/20 rounded-full mx-auto flex items-center justify-center">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-system-gray">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
                         </svg>
                     </div>
                     <h3 className="text-ios-headline">Access Granted</h3>
-                    <p className="text-ios-footnote text-secondaryLabel">Subscribe for drop keys and exclusive community access codes via iMessage.</p>
+                    <p className="text-ios-footnote text-secondary-label">Subscribe for drop keys and exclusive community access codes via iMessage.</p>
                     <div className="flex space-x-2">
                         <input
                             type="text"
                             placeholder="+234 ..."
-                            className="flex-1 px-4 py-2.5 rounded-ios-lg bg-white dark:bg-black border border-separator text-ios-body focus:outline-none focus:ring-1 focus:ring-systemBlue"
+                            className="flex-1 px-4 py-2.5 rounded-ios-lg bg-white dark:bg-black border border-separator text-ios-body focus:outline-none focus:ring-1 focus:ring-system-blue"
                         />
                         <Button>Join</Button>
                     </div>
