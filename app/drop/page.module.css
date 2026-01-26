@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--padding-global);
+    padding-top: var(--space-xl);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}

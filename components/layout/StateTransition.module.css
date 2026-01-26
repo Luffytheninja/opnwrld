@@ -1,0 +1,16 @@
+.transition {
+    width: 100%;
+    min-height: 100vh;
+    transition: opacity var(--transition-slow) var(--ease-soft-cubic),
+        transform var(--transition-slow) var(--ease-soft-cubic);
+}
+
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translateY(-8px);
+}

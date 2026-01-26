@@ -1,0 +1,12 @@
+.block {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-weight: var(--font-weight-normal);
+}

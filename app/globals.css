@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 0 0 0;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: 0 0 0;
+      --foreground: 255 255 255;
+    }
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-label antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    /* Native App Feel */
+    user-select: none;
+    cursor: default;
+  }
+
+  /* Smooth scroll for desktop, native feel for ios */
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* iOS safe area support */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* iOS glassmorphism effect */
+.glass {
+  @apply backdrop-blur-ios bg-white/70 dark:bg-black/70;
+}
+
+/* Hide scrollbars for a cleaner app feel */
+::-webkit-scrollbar {
+  display: none;
+}
