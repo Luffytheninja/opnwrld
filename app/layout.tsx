@@ -1,23 +1,12 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
-import TabBar from "@/components/ios/TabBar";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 export const metadata: Metadata = {
   title: "OPN WRLD",
-  description: "High-end street/creatives catering streetwear brand. Built for the community.",
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: "default",
-    title: "OPN WRLD",
-  },
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: "cover",
+  description: "A shared frequency for those building their own reality.",
 };
 
 export default function RootLayout({
@@ -26,12 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full">
-      <body className="h-full font-sans bg-background">
-        <main className="min-h-full pb-20">
-          {children}
-        </main>
-        <TabBar />
+    <html lang="en">
+      <body>
+        <CustomCursor />
+        <Header />
+        <main className="page-transition">{children}</main>
+        <Footer />
       </body>
     </html>
   );

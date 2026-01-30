@@ -1,0 +1,141 @@
+.community {
+    min-height: 100vh;
+    background: #000000;
+    color: #FFFFFF;
+    padding-top: 151px;
+    padding-bottom: var(--space-xl);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-global);
+}
+
+.header {
+    margin-bottom: var(--space-xl);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.4;
+    text-transform: lowercase;
+}
+
+.main {
+    display: grid;
+    gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+    .main {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+.signalCard {
+    background: #0A0A0A;
+    padding: var(--space-xl);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.signalLevel {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: var(--brand-yellow);
+    letter-spacing: 0.2em;
+}
+
+.signalTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.signalDescription {
+    font-size: 0.9rem;
+    color: #888;
+    max-width: 400px;
+}
+
+.form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.input {
+    flex: 1;
+    height: 50px;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--brand-yellow);
+}
+
+.button {
+    padding: 0 2rem;
+    background: #FFFFFF;
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background: var(--brand-yellow);
+}
+
+.linksGrid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.linkCard {
+    background: #0A0A0A;
+    padding: var(--space-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.linkCard:hover {
+    border-color: #FFFFFF;
+}
+
+.linkLabel {
+    font-size: 0.6rem;
+    font-weight: 700;
+    opacity: 0.3;
+    letter-spacing: 0.2em;
+}
+
+.linkName {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.footerNote {
+    margin-top: var(--space-xl);
+    text-align: center;
+    font-size: 0.7rem;
+    opacity: 0.3;
+}

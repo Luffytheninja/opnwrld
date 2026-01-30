@@ -1,0 +1,101 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    transition:
+        transform var(--transition-medium) var(--ease-out-expo),
+        height var(--transition-medium) var(--ease-out-expo),
+        background-color var(--transition-medium) var(--ease-out-expo),
+        backdrop-filter var(--transition-medium) var(--ease-out-expo);
+    padding: 0 var(--padding-global);
+}
+
+.header.scrolled {
+    height: 70px;
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+}
+
+.nav {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.navGroup {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.navGroup:last-child {
+    justify-content: flex-end;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast) var(--ease-out-expo);
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo img {
+    filter: invert(1);
+    /* Logo is black, need it white on dark, or maybe just leave as is if we want it black on yellow? */
+}
+
+/* On yellow background (Hero), the logo should be black. 
+   On dark background (Store), the logo should be white. 
+   For now, since the Hero is the first thing, let's keep it black and handle themes. */
+
+.link {
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-primary-dark);
+    opacity: 0.6;
+    transition: opacity var(--transition-fast) var(--ease-out-expo);
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 80px;
+        padding: 0 var(--space-sm);
+    }
+
+    .header.scrolled {
+        height: 60px;
+    }
+
+    .navGroup {
+        display: none;
+        /* Mobile will use a bottom sheet or different nav as per designer opinion */
+    }
+
+    .nav {
+        display: flex;
+        justify-content: center;
+    }
+}

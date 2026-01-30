@@ -1,0 +1,135 @@
+.store {
+    background: #000000;
+    color: #FFFFFF;
+    padding: var(--space-xl) 0;
+    position: relative;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--padding-global);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 0.7rem;
+    opacity: 0.4;
+    text-transform: lowercase;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+.card {
+    position: relative;
+    background: #0A0A0A;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+        transform 0.6s var(--ease-out-expo),
+        box-shadow 0.6s var(--ease-out-expo),
+        filter 0.6s var(--ease-out-expo);
+}
+
+/* Hover effect for the grid: other cards desaturate */
+.grid:hover .card:not(:hover) {
+    filter: saturate(0.2) opacity(0.6);
+}
+
+.card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.imageWrapper {
+    aspect-ratio: 4 / 5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0F0F0F;
+    padding: var(--space-lg);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.6s var(--ease-out-expo);
+}
+
+.card:hover .image {
+    transform: scale(1.1);
+}
+
+.info {
+    padding: var(--space-md);
+    background: linear-gradient(to top, #0A0A0A, transparent);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.topInfo,
+.bottomInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+.name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.2rem 0;
+}
+
+.price {
+    font-weight: 700;
+    color: #FFFFFF;
+    opacity: 1 !important;
+}
+
+.status {
+    color: var(--brand-yellow);
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        gap: var(--space-sm);
+    }
+
+    .name {
+        font-size: 1rem;
+    }
+
+    .imageWrapper {
+        padding: var(--space-md);
+    }
+}

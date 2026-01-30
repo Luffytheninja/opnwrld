@@ -1,176 +1,140 @@
-@import "tailwindcss";
+/* ============================================
+   OPN WRLD — LAGOS NOIR GLOBAL TOKENS
+   ============================================ */
 
-@theme {
-  /* iOS 26 System Colors */
-  --color-system-blue: #007AFF;
-  --color-system-gray: #8E8E93;
-  --color-system-gray-2: #AEAEB2;
-  --color-system-gray-3: #C7C7CC;
-  --color-system-gray-4: #D1D1D6;
-  --color-system-gray-5: #E5E5EA;
-  --color-system-gray-6: #F2F2F7;
-  --color-label: #000000;
-  --color-secondary-label: rgba(60, 60, 67, 0.6);
-  --color-tertiary-label: rgba(60, 60, 67, 0.3);
-  --color-background: #FFFFFF;
-  --color-secondary-background: #F2F2F7;
-  --color-tertiary-background: #FFFFFF;
-  --color-separator: rgba(60, 60, 67, 0.29);
+:root {
+  /* Color System */
+  --bg-primary: #050505;
+  --bg-surface: #0F0F0F;
+  --brand-yellow: #FFF600;
 
-  /* iOS Spacing Scale (8pt grid converted to rem for v4 consistency) */
-  --spacing-ios-1: 4px;
-  --spacing-ios-2: 8px;
-  --spacing-ios-3: 12px;
-  --spacing-ios-4: 16px;
-  --spacing-ios-5: 20px;
-  --spacing-ios-6: 24px;
-  --spacing-ios-8: 32px;
-  --spacing-ios-10: 40px;
-  --spacing-ios-12: 48px;
+  /* Text Colors */
+  --text-primary: #EAEAEA;
+  --text-secondary: rgba(234, 234, 234, 0.6);
+  --text-muted: rgba(234, 234, 234, 0.3);
 
-  /* iOS Border Radius */
-  --radius-ios-sm: 8px;
-  --radius-ios-md: 10px;
-  --radius-ios-lg: 12px;
-  --radius-ios-xl: 16px;
-  --radius-ios-2xl: 20px;
+  --accent: #FFF600;
 
-  /* Backdrop Blur */
-  --blur-ios: 20px;
+  /* Typography */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-slow: 1000ms;
+  --transition-medium: 600ms;
+  --transition-fast: 300ms;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+
+  /* Layout */
+  --max-width: 1600px;
+  --padding-global: 2rem;
 }
 
-@layer base {
-  :root {
-    --background: 255 255 255;
-    --foreground: 0 0 0;
-  }
+/* ============================================
+   RESET & BASE
+   ============================================ */
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 0 0 0;
-      --foreground: 255 255 255;
-
-      /* Dark Mode Color Overrides */
-      --color-label: #FFFFFF;
-      --color-secondary-label: rgba(235, 235, 245, 0.6);
-      --color-tertiary-label: rgba(235, 235, 245, 0.3);
-      --color-background: #000000;
-      --color-secondary-background: #1C1C1E;
-      --color-separator: rgba(84, 84, 88, 0.65);
-    }
-  }
-
-  * {
-    -webkit-tap-highlight-color: transparent;
-    box-sizing: border-box;
-  }
-
-  body {
-    @apply bg-background text-label antialiased;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
-    text-rendering: optimizeLegibility;
-    overflow-x: hidden;
-    user-select: none;
-    cursor: default;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-    height: 100%;
-    -webkit-text-size-adjust: 100%;
-  }
-
-  .safe-top {
-    padding-top: env(safe-area-inset-top);
-  }
-
-  .safe-bottom {
-    padding-bottom: env(safe-area-inset-bottom);
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* iOS glassmorphism effect */
-.glass {
-  @apply backdrop-blur-ios bg-white/70 dark:bg-black/70;
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* iOS Typography Utilities */
-.text-ios-largeTitle {
-  font-size: 34px;
-  line-height: 41px;
-  font-weight: 400;
-  letter-spacing: -0.4px;
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
-.text-ios-title1 {
-  font-size: 28px;
-  line-height: 34px;
-  font-weight: 400;
-  letter-spacing: -0.4px;
+body {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  line-height: 1.6;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.text-ios-title2 {
-  font-size: 22px;
-  line-height: 28px;
-  font-weight: 400;
-  letter-spacing: -0.4px;
+/* Grain/Noise Overlay - Low Opacity for Dark Mode */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.text-ios-title3 {
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 400;
-  letter-spacing: -0.4px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.text-ios-headline {
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 600;
-  letter-spacing: -0.4px;
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.text-ios-body {
-  font-size: 17px;
-  line-height: 22px;
-  font-weight: 400;
-  letter-spacing: -0.4px;
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-.text-ios-callout {
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 400;
-  letter-spacing: -0.4px;
-}
-
-.text-ios-subheadline {
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: 400;
-  letter-spacing: -0.2px;
-}
-
-.text-ios-footnote {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
-  letter-spacing: -0.1px;
-}
-
-.text-ios-caption1 {
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-}
-
-.text-ios-caption2 {
-  font-size: 11px;
-  line-height: 13px;
-  font-weight: 400;
-}
-
+/* Scrollbar hidden */
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Page Transitions */
+.page-transition {
+  animation: fade-up 0.8s var(--ease-out-expo) forwards;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
